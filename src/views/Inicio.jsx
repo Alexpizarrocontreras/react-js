@@ -1,3 +1,4 @@
+import './views.css';
 function Inicio() {
     return (
         <section className="hero">
@@ -5,7 +6,7 @@ function Inicio() {
                 Bienvenidos a nuestro portal de formacion
             </h2>
  
-            <p>
+            <p className='texto'>
                 Encuentra cursos y fortalece tus
                 habilidades tecnologicas.
             </p>

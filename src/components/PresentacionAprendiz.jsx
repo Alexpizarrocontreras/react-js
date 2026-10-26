@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import './styles.css';
 
-function PresentacionAprendiz() {
+
+function PresentacionAprendiz(props) {
     const [nombre, setNombre] = useState("");
     const [curso, setCurso] = useState("");
     const [mensaje, setMensaje] = useState("");
@@ -36,28 +38,33 @@ function PresentacionAprendiz() {
         <div>
             <h2>Mi presentación</h2>
 
-            <form onSubmit={manejarEnvio}>
+            <form className="presentacion" onSubmit={manejarEnvio}>
                 <label htmlFor="nombrePresentacion">Escribe tu nombre: </label>
-                <input
+                <input className="input-present"
                     id="nombrePresentacion"
                     type="text"
                     value={nombre}
                     onChange={(evento) => setNombre(evento.target.value)}
-                    placeholder="Ejemplo: Jhon Carmona"
+                    placeholder="Ejemplo: alex pizarro"
                 />
                 <br /><br />
 
-                <label htmlFor="cursoPresentacion">¿Qué curso te interesa?</label>
-                <input
+                <label htmlFor="cursoPresentacion">¿Qué curso te interesa?: </label>
+                <select className="input-present"
                     id="cursoPresentacion"
-                    type="text"
                     value={curso}
                     onChange={(evento) => setCurso(evento.target.value)}
-                    placeholder="Ejemplo: Desarrollo web"
-                />
+                >
+                    <option value="">-- Selecciona un curso --</option>
+                    {props.cursos && props.cursos.map((item) => (
+                        <option key={item.id} value={item.nombre}>
+                            {item.nombre}
+                        </option>
+                    ))}
+                </select>
                 <br /><br />
                 
-                <button type="submit">Enviar formulario</button>
+                <button type="submit" className="envio-present">Enviar formulario</button>
             </form>
             
             {mensaje !== "" && <p>{mensaje}</p>}
@@ -65,15 +72,15 @@ function PresentacionAprendiz() {
             <h3>MI PERFIL DE APRENDIZ</h3>
 
             {mostrarInfo && perfil.nombre && (
-                <div>
+                <div className="card-present">
                     <p><strong>Nombre:</strong> {perfil.nombre}</p>
                     <p><strong>Curso de interés:</strong> {perfil.curso}</p>
                     <br />
                 </div>
             )}
-                <button onClick={() => setMostrarInfo(!mostrarInfo)}>
-                    {mostrarInfo ? "Ocultar información" : "Mostrar información"}
-                </button>
+            <button onClick={() => setMostrarInfo(!mostrarInfo)}>
+                {mostrarInfo ? "Ocultar información" : "Mostrar información"}
+            </button>
         </div>
     );
 }

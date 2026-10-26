@@ -1,7 +1,7 @@
 function Footer() {
     return (
-        <footer>
-            <p>&copy; centro nacional colombo aleman copyright todos los derechos reservados</p>
+        <footer className="foot">
+            <p className="foot-text">&copy; centro nacional colombo aleman copyright todos los derechos reservados</p>
         </footer>
     )
 }

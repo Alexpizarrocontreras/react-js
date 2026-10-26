@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom"
+import logo from '../assets/logo.png';
  
 function Navbar() {
   return (
-    <nav className="navbar">
-      <Link to="/">Inicio </Link>
+    <nav className="navbar"> <img src={logo} className='logo'/>
+      <Link to="/" className="cont" >Inicio </Link>
  
-      <Link to="/Cursos">Cursos </Link>
+      <Link to="/Cursos" className="cont" >Cursos </Link>
  
-      <Link to="/Registro">Registro </Link>
+      <Link to="/Registro" className="cont" >Registro </Link>
  
-      <Link to="/GestionCursos">Administrar Cursos </Link>
+      <Link to="/GestionCursos" className="cont" >Administrar Cursos </Link>
 
-      <Link to="/Acercade">Acerca de</Link>
+      <Link to="/Acercade" className="cont">Acerca de</Link>
     </nav>
   );
 }

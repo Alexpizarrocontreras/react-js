@@ -1,4 +1,5 @@
 import Curso from "../components/Curso";
+import './views.css';
  
 function Cursos({ cursos }) {
     return (

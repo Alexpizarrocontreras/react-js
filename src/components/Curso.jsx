@@ -16,23 +16,23 @@ function Curso(props){
         alert(`te haz inscrito al curso de ${props.nombre}`);
     }
     return (
-        <div>
-            <h3>{props.nombre}</h3>
-            <p>{props.descripcion}</p>
-            <p>personas interesadas: {interesados}</p>
-            <button onClick={mostrarmensaje}>
+        <div className="contenedor-curso">
+            <h3 className="titulo-curso">{props.nombre}</h3>
+            <p className="descripcion-curso">{props.descripcion}</p>
+            <p className="interesados">personas interesadas: {interesados}</p>
+            <button className="boton-curso" onClick={mostrarmensaje}>
                 ver informacion
             </button>
             <div></div>
-            <button onClick={() => {inscripcion();agregarinscritos();}}>
+            <button className="boton-curso" onClick={() => {inscripcion();agregarinscritos();}}>
                 inscribirme
             </button>
             <div></div>
-           <button onClick={agregarinteresado}>
+           <button className="boton-curso" onClick={agregarinteresado}>
                 interesado
             </button>
-            <p>inscripciones registradas: {inscritos}</p>
-           <button onClick={agregarinscritos}>
+            <p className="inscritos" >inscripciones registradas: {inscritos}</p>
+           <button className="boton-curso" onClick={agregarinscritos}>
                 registrar inscripcion
             </button>
         </div>

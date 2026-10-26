@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './styles.css';
  
 function GestionCursos({ cursos, setCursos }) {
   const [nombre, setNombre] = useState("");
@@ -27,7 +28,6 @@ function GestionCursos({ cursos, setCursos }) {
     }
  
     if (idEditando !== null) {
-      // UPDATE: actualizar un curso existente
       const cursosActualizados = cursos.map((curso) =>
         curso.id === idEditando
           ? {
@@ -42,7 +42,6 @@ function GestionCursos({ cursos, setCursos }) {
       setCursos(cursosActualizados);
       setMensaje("Curso actualizado correctamente.");
     } else {
-      // CREATE: agregar un curso nuevo
       const nuevoCurso = {
         id: Date.now(),
         nombre: nombre.trim(),
@@ -98,11 +97,11 @@ function GestionCursos({ cursos, setCursos }) {
  
       <p>Registra cursos nuevos o modifica los que ya existen.</p>
  
-      <form onSubmit={manejarEnvio}>
-        <div>
-          <label htmlFor="nombre-curso">Nombre del curso:</label>
+      <form className="crear-cursos" onSubmit={manejarEnvio}>
+        <div className="nombre-curso">
+          <label htmlFor="nombre-curso">Nombre del curso: </label>
  
-          <input
+          <input className="input-curso"
             id="nombre-curso"
             type="text"
             value={nombre}
@@ -111,10 +110,10 @@ function GestionCursos({ cursos, setCursos }) {
           />
         </div>
  
-        <div>
-          <label htmlFor="descripcion-curso">Descripción:</label>
+        <div className="descrip-curso">
+          <label htmlFor="descripcion-curso">Descripción: </label>
  
-          <input
+          <input className="input-curso"
             id="descripcion-curso"
             type="text"
             value={descripcion}
@@ -123,10 +122,10 @@ function GestionCursos({ cursos, setCursos }) {
           />
         </div>
  
-        <div>
-          <label htmlFor="informacion-curso">Información adicional:</label>
+        <div className="informacion-curso">
+          <label htmlFor="informacion-curso" className="info-cur">Información adicional: </label>
  
-          <textarea
+          <textarea className="input-curso"
             id="informacion-curso"
             value={informacion}
             onChange={(evento) => setInformacion(evento.target.value)}
@@ -135,12 +134,12 @@ function GestionCursos({ cursos, setCursos }) {
           />
         </div>
  
-        <button type="submit">
+        <button type="submit" className="boton-editar">
           {idEditando !== null ? "Guardar cambios" : "Agregar curso"}
         </button>
  
         {idEditando !== null && (
-          <button type="button" onClick={cancelarEdicion}>
+          <button type="button" className="boton-editar" onClick={cancelarEdicion}>
             Cancelar edición
           </button>
         )}
@@ -160,18 +159,18 @@ function GestionCursos({ cursos, setCursos }) {
         <div className="lista-administracion">
           {cursos.map((curso) => (
             <article className="item-administracion" key={curso.id}>
-              <h4>{curso.nombre}</h4>
+              <h4 className="cur-title">{curso.nombre}</h4>
  
-              <p>{curso.descripcion}</p>
+              <p className="cur-desc">{curso.descripcion}</p>
  
-              <p>{curso.informacion}</p>
+              <p className="cur-inf">{curso.informacion}</p>
  
               <div className="acciones-curso">
-                <button type="button" onClick={() => editarCurso(curso)}>
+                <button className="editar" type="button" onClick={() => editarCurso(curso)}>
                   Editar
                 </button>
  
-                <button type="button" onClick={() => eliminarCurso(curso.id)}>
+                <button className="eliminar" type="button" onClick={() => eliminarCurso(curso.id)}>
                   Eliminar
                 </button>
               </div>

@@ -1,0 +1,180 @@
+.head {
+    border-radius: 20px 20px 10px 10px;
+    background-color: rgb(29, 61, 133);
+}
+.cont {
+    text-decoration: none;
+    color: rgb(12, 155, 107);
+    height: 50px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 20px;
+
+}
+.titulo {
+    color: rgb(0, 255, 42);
+}
+.subtitulo {
+    color: rgb(255, 0, 0);
+}
+
+.navbar {
+    background-color: aquamarine;
+    height: 60px;
+    border-radius: 10px 10px 20px 20px;
+    display: flex;
+    justify-content: right;
+    align-items: center;     
+    gap: 5px;
+    padding: 0 20px;
+}
+.contenedor-curso{
+    background-color: rgb(56, 115, 163);
+    max-width: 500px; 
+    width: 90%;
+    margin: 0 auto 20px auto;   
+    padding: 20px;     
+    border-radius: 10px 10px 20px 20px;
+
+}
+
+.logo {
+    height: 60px;
+    display: flex;
+    margin-right: auto;
+}
+
+.boton-curso{
+    background: none;
+    background-color: rgb(62, 160, 160);
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    width: auto;
+    border-color: aquamarine;
+    padding: 0;
+    margin: 0 auto 10px auto;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    color: black;
+}
+
+.titulo-curso, .descripcion-curso, .interesados, .inscritos {
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.crear-cursos{
+    background-color: rgb(56, 115, 163);
+    max-width: 500px; 
+    width: 90%;
+    margin: 0 auto 20px auto;   
+    padding: 20px;     
+    border-radius: 10px 10px 20px 20px;
+    color: black;
+}
+.input-curso {
+    background: none;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0 auto 5px auto;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+
+.boton-editar{
+    background: none;
+    background-color: rgb(62, 160, 160);
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    width: auto;
+    border-color: aquamarine;
+    padding: 0;
+    margin: 0 auto 10px auto;
+    font: inherit;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    margin-left: 15px; 
+}
+.item-administracion{
+    background-color: rgb(56, 147, 163);
+    max-width: 500px; 
+    width: 90%;
+    margin: 0 auto 20px auto;   
+    padding: 20px;     
+    border-radius: 10px 10px 20px 20px;
+    color: black;
+}
+
+.editar, .eliminar{
+    background: none;
+    background-color: rgb(62, 160, 160);
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    width: auto;
+    border-color: aquamarine;
+    padding: 0;
+    margin: 0 auto 10px auto;
+    font: inherit;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    margin-left: 15px; 
+}
+.presentacion {
+    background-color: rgb(56, 115, 163);
+    max-width: 500px; 
+    width: 90%;
+    margin: 0 auto 20px auto;   
+    padding: 20px;     
+    border-radius: 10px 10px 20px 20px;
+    color: black;
+}
+.input-present {
+    background: none;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0 auto 5px auto;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+.envio-present{
+    background: none;
+    background-color: rgb(62, 160, 160);
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    width: auto;
+    border-color: aquamarine;
+    padding: 0;
+    margin: 0 auto 10px auto;
+    font: inherit;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    margin-left: 15px; 
+}
+.card-present {
+    background-color: rgb(56, 115, 163);
+    max-width: 500px; 
+    width: 90%;
+    margin: 0 auto 20px auto;   
+    padding: 20px;     
+    border-radius: 10px 10px 20px 20px;
+    color: black;
+}

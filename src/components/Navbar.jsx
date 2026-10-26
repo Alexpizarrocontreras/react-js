@@ -13,6 +13,8 @@ function Navbar() {
       <Link to="/GestionCursos" className="cont" >Administrar Cursos </Link>
 
       <Link to="/Acercade" className="cont">Acerca de</Link>
+
+      <Link to="/Usuarioapi" className="cont">usuarios</Link>
     </nav>
   );
 }

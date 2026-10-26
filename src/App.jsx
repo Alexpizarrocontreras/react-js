@@ -1,67 +1,67 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Curso from './components/Curso';
-import Navbar from './components/Navbar';
-import RegistroAprendiz from './components/RegistroAprendiz';
-import PresentacionAprendiz from './components/PresentacionAprendiz';
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import GestionCursos from "./components/GestionCursos";
+ 
+import Inicio from "./views/Inicio";
+import Cursos from "./views/Cursos";
+import Registro from "./views/Registro";
+import AcercaDe from "./views/Acercade";
+ 
 function App() {
-  function saludar(){
-    alert("bienvenido al centro nacional colombo aleman")
-  }
+  const [cursos, setCursos] = useState([
+    {
+      id: 1,
+      nombre: "Diseño Web",
+      descripcion: "Creación de interfaces modernas y atractivas.",
+      informacion: "Aprenderás HTML, CSS y fundamentos de diseño web.",
+    },
+    {
+      id: 2,
+      nombre: "Desarrollo de Software",
+      descripcion: "Construcción de aplicaciones tecnológicas.",
+      informacion: "Aprenderás programación y desarrollo de aplicaciones.",
+    },
+    {
+      id: 3,
+      nombre: "Bases de Datos",
+      descripcion: "Diseño y administración de datos.",
+      informacion: "Aprenderás modelado, normalización y SQL.",
+    },
+  ]);
+ 
   return (
-    <div>
+    <>
       <Header />
+ 
       <Navbar />
-
-      <main id='inicio'>
-
-      <section id='cursos'>
-
-      <h2>nuestros cursos</h2>
-      <button onClick={saludar}>
-        haz click aqui
-        </button>
-      <p>ofrecemos una variedad de cursos para ayudarte a desarrollar tus habilidades y alcanzar tus metas profesionales</p>
-      <Curso 
-        nombre="desarrollo web"
-        descripcion="aprender a crear paginas web modernas y atractivas"
-        />
-      <Curso 
-        nombre="bases de datos"
-        descripcion="aprende a gestionar y manipular bases de datos"
-        />
-      <Curso 
-        nombre="inteligencia artificial"
-        descripcion="aprende a desarrollar soluciones basadas en intelgencia artificial"
-        />
-      <Curso 
-        nombre="programacion con java"
-        descripcion="aprende a desarrollar aplicaciones y soluciones mediante el lenguaje java"
-        />
-      <Curso 
-        nombre="curso de python"
-        descripcion="aprende a desarrollar aplicaciones mediante el entorno de python"
-        />
-      </section>
-
-      <section id='nosotros'>
-        <h2>sobre nosotros</h2>
-        <p>somos un centro de formacion comprometido con el desarrollo de nuestros estudiantes y la excelencia educativa</p>
-      </section>
-
-      <section id='contacto'>
-        <h2>contacto</h2>
-        <p>puedes contactarnos a traves de nuestro correo electronico o numero telefonico para mas informacion sobre nuestros cursos</p>
-      </section>
-
-      <RegistroAprendiz />
-
+ 
+      <main>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+ 
+          <Route path="/Cursos" element={<Cursos cursos={cursos} />} />
+ 
+          <Route path="/Registro" element={<Registro cursos={cursos} />} />
+ 
+          <Route
+            path="/GestionCursos"
+            element={<GestionCursos cursos={cursos} setCursos={setCursos} />}
+          />
+           <Route
+            path="/Acercade"
+            element={<AcercaDe />}
+          />
+          <Route path="*" element={<h2>Página no encontrada</h2>} />
+        </Routes>
       </main>
-
-      <PresentacionAprendiz />
+ 
       <Footer />
-    </div>
+    </>
   );
 }
-
+ 
 export default App;

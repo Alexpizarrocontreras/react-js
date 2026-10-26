@@ -1,41 +1,81 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function PresentacionAprendiz (){
-const [nombre, setnombre] = useState("");
-const [curso, setcurso] = useState("");
+function PresentacionAprendiz() {
+    const [nombre, setNombre] = useState("");
+    const [curso, setCurso] = useState("");
+    const [mensaje, setMensaje] = useState("");
+    const [mostrarInfo, setMostrarInfo] = useState(false);
+
+    const [perfil, setperfil] = useState({ nombre: "", curso: "" });
+
+    useEffect(() => {
+        const aprendizLocal = localStorage.getItem("aprendiz");
+        if (aprendizLocal) {
+            setperfil(JSON.parse(aprendizLocal));
+        }
+    }, []);
+
+    function manejarEnvio(evento) {
+        evento.preventDefault();
+        if (nombre.trim() === "" || curso.trim() === "") {
+            setMensaje("Completa todos los campos obligatorios antes de continuar");
+            return;
+        }
+
+        const nuevosDatos = { nombre: nombre.trim(), curso: curso.trim() };
+
+        setperfil(nuevosDatos);
+        localStorage.setItem("aprendiz", JSON.stringify(nuevosDatos));
+
+        setMensaje("Presentación enviada correctamente.");
+        setNombre("");
+        setCurso("");
+    }
 
     return (
         <div>
-    <h2>mi presentacion</h2>
-    <label htmlFor="nombrePresentacion">escribe tu nombre: </label>
+            <h2>Mi presentación</h2>
 
-        <input 
-        is="nombrePresentacion"
-        type="text"
-        value={nombre}
-        onChange={(e) => setnombre(e.target.value)}
-        placeholder="ejemplo: alex"
-        />
-        <br />
-        <br />
+            <form onSubmit={manejarEnvio}>
+                <label htmlFor="nombrePresentacion">Escribe tu nombre: </label>
+                <input
+                    id="nombrePresentacion"
+                    type="text"
+                    value={nombre}
+                    onChange={(evento) => setNombre(evento.target.value)}
+                    placeholder="Ejemplo: Jhon Carmona"
+                />
+                <br /><br />
 
-        <label htmlFor="cursoPresentacion">¿que curso te interesa?</label>
+                <label htmlFor="cursoPresentacion">¿Qué curso te interesa?</label>
+                <input
+                    id="cursoPresentacion"
+                    type="text"
+                    value={curso}
+                    onChange={(evento) => setCurso(evento.target.value)}
+                    placeholder="Ejemplo: Desarrollo web"
+                />
+                <br /><br />
+                
+                <button type="submit">Enviar formulario</button>
+            </form>
+            
+            {mensaje !== "" && <p>{mensaje}</p>}
 
-        <input 
-        is="cursoPresentacion"
-        type="text"
-        value={curso}
-        onChange={(e) => setcurso(e.target.value)}
-        placeholder="ejemplo: alex"
-        />
-        <h3>mis datos</h3>
-        <p>mi nombre es: {nombre}</p>
-        <p>me interesa aprender: {curso}</p>
-        <p>
-            hola, {nombre} te interesa aprender {curso}
-        </p>
+            <h3>MI PERFIL DE APRENDIZ</h3>
 
+            {mostrarInfo && perfil.nombre && (
+                <div>
+                    <p><strong>Nombre:</strong> {perfil.nombre}</p>
+                    <p><strong>Curso de interés:</strong> {perfil.curso}</p>
+                    <br />
+                </div>
+            )}
+                <button onClick={() => setMostrarInfo(!mostrarInfo)}>
+                    {mostrarInfo ? "Ocultar información" : "Mostrar información"}
+                </button>
         </div>
     );
 }
+
 export default PresentacionAprendiz;

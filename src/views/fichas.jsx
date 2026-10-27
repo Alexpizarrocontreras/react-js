@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-function Aprendiz() {
-    const [usuarios, setusuarios] = useState([]);
+function Fichas() {
+    const [fichas, setfichas] = useState([]);
     const [cargando, setcargando] = useState(true);
     const [error, seterror] = useState("");
 
@@ -10,7 +10,7 @@ function Aprendiz() {
             try {
                 setcargando(true);
                 const respuesta = await fetch(
-                    "https://jsonplaceholder.typicode.com/todos"
+                    "https://jsonplaceholder.typicode.com/posts"
                 );
                 
                 if (!respuesta.ok) {
@@ -18,7 +18,7 @@ function Aprendiz() {
                 }
                 
                 const datos = await respuesta.json();
-                setusuarios(datos);
+                setfichas(datos);
             } catch (err) {
                 seterror("no pudimos cargar los usuarios, intenta nuevamente");
             } finally {
@@ -34,11 +34,13 @@ function Aprendiz() {
 
     return (
         <div>
-            <h2>Lista de aprendices</h2>
+            <h2>Lista de </h2>
             <div>
-                {usuarios.map((usuario) => (
-                    <div key={usuario.id}>
-                        <strong>{usuario.name}</strong> - {usuario.email}
+                {fichas.map((ficha) => (
+                    <div key={ficha.id}>
+                        <strong>{ficha.title}</strong> - {ficha.body}
+                        <br />
+                        <br />
                     </div>
                 ))}
             </div>
@@ -46,4 +48,4 @@ function Aprendiz() {
     );
 }
 
-export default Aprendiz;
+export default Fichas;

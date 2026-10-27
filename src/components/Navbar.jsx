@@ -18,8 +18,8 @@ function Navbar() {
           <Link to="/aprendiz">Aprendices</Link>
           <Link to="/instructores">Instructores</Link>
           <Link to="/competencias">competencias</Link>
-          <Link to="/instructores">Instructores</Link>
-          <Link to="/instructores">Instructores</Link>
+          <Link to="/fichas">fichas</Link>
+          <Link to="/Evaluaciones">Evaluaciones</Link>
         </div>
       </div>
     </nav>

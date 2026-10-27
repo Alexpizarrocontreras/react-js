@@ -13,6 +13,8 @@ import AcercaDe from "./views/Acercade";
 import Aprendiz from "./views/aprendiz";
 import Instructores from "./views/instructores";
 import Competencias from "./views/competencias";
+import Fichas from "./views/Fichas";
+import Evaluaciones from "./views/Evaluaciones";
  
 function App() {
   const [cursos, setCursos] = useState(() => {
@@ -74,6 +76,10 @@ function App() {
          <Route path="/instructores" element={<Instructores />} />
 
          <Route path="/competencias" element={<Competencias />} />
+
+         <Route path="/fichas" element={<Fichas />} />
+
+         <Route path="/Evaluaciones" element={<Evaluaciones />} />
 
           <Route path="*" element={<h2>Página no encontrada</h2>} />
         </Routes>

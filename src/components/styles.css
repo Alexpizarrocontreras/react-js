@@ -178,3 +178,63 @@
     border-radius: 10px 10px 20px 20px;
     color: black;
 }
+
+/* Contenedor del menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px; 
+}
+
+/* Estilo del botón principal del dropdown */
+.dropdown .dropbtn {
+  background-color: rgb(62, 160, 160); /* Mismo color que tus otros botones */
+  color: black;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid aquamarine;
+  padding: 0 15px;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Contenedor del contenido flotante (oculto por defecto) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0; /* Lo alinea a la derecha para que no se salga de la pantalla */
+  top: 100%;
+  background-color: rgb(56, 115, 163); /* Azul como tus contenedores */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  z-index: 100;
+  overflow: hidden; /* Mantiene las esquinas redondeadas */
+}
+
+/* Enlaces internos del desplegable */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+/* Cambio de color al pasar el mouse por encima de las opciones */
+.dropdown-content a:hover {
+  background-color: rgb(62, 160, 160);
+  color: black;
+}
+
+/* Muestra el menú al posicionar el cursor */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Pequeño cambio visual en el botón principal al abrirse */
+.dropdown:hover .dropbtn {
+  background-color: rgb(45, 130, 130);
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Usuarioapi() {
+function Aprendiz() {
     const [usuarios, setusuarios] = useState([]);
     const [cargando, setcargando] = useState(true);
     const [error, seterror] = useState("");
@@ -34,7 +34,7 @@ function Usuarioapi() {
 
     return (
         <div>
-            <h2>Lista de Usuarios</h2>
+            <h2>Lista de aprendices</h2>
             <div>
                 {usuarios.map((usuario) => (
                     <div key={usuario.id}>
@@ -46,4 +46,4 @@ function Usuarioapi() {
     );
 }
 
-export default Usuarioapi;
+export default Aprendiz;

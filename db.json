@@ -1,0 +1,25 @@
+{
+  "aprendices": [
+    {
+      "id": "2",
+      "name": "alex",
+      "email": "alex@email-com"
+    },
+    {
+      "id": "Yes_pxfuP0k",
+      "name": "asd",
+      "email": "as@gasd"
+    },
+    {
+      "id": "Ku0kF22nVzw",
+      "name": "asdads",
+      "email": "asd@email.com"
+    },
+    {
+      "id": "ICbXrWwx8uw",
+      "name": "pedro",
+      "email": "pedro@gmail.com"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

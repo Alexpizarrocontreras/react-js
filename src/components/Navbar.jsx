@@ -20,6 +20,7 @@ function Navbar() {
           <Link to="/competencias">competencias</Link>
           <Link to="/fichas">fichas</Link>
           <Link to="/Evaluaciones">Evaluaciones</Link>
+          <Link to="/GestionAprendicesApi">gestion aprendiz</Link>
         </div>
       </div>
     </nav>

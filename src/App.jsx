@@ -15,7 +15,8 @@ import Instructores from "./views/instructores";
 import Competencias from "./views/competencias";
 import Fichas from "./views/Fichas";
 import Evaluaciones from "./views/Evaluaciones";
- 
+import RegistroAprendizApi from "./views/RegistroAprendizAPi";
+import GestionAprendicesApiCompleta from "./views/GestionAprendicesApi";
 function App() {
   const [cursos, setCursos] = useState(() => {
     const cursosGuardados = localStorage.getItem("mis_cursos");
@@ -80,6 +81,10 @@ function App() {
          <Route path="/fichas" element={<Fichas />} />
 
          <Route path="/Evaluaciones" element={<Evaluaciones />} />
+
+         <Route path="/RegistroAprendizApi" element={<RegistroAprendizApi />} />
+
+          <Route path="/GestionAprendicesApi" element={<GestionAprendicesApiCompleta />} />
 
           <Route path="*" element={<h2>Página no encontrada</h2>} />
         </Routes>

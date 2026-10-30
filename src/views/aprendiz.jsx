@@ -10,7 +10,7 @@ function Aprendiz() {
             try {
                 setcargando(true);
                 const respuesta = await fetch(
-                    "https://jsonplaceholder.typicode.com/users"
+                    "http://localhost:5000/aprendices"
                 );
                 
                 if (!respuesta.ok) {
